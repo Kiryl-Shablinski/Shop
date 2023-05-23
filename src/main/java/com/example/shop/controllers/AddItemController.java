@@ -24,11 +24,14 @@ public class AddItemController {
     public RedirectView addData(@RequestParam String name,
                                 @RequestParam String price,
                                 @RequestParam String disc,
-                                @RequestParam String url){
+                                @RequestParam String url,
+                                @RequestParam String type){
     ItemModel itemModel = new ItemModel();
     itemModel.setName(name);
     itemModel.setDisc(disc);
     itemModel.setUrl(url);
+    itemModel.setTime(System.currentTimeMillis());
+    itemModel.setType(type);
 
     try {
         itemModel.setPrice(Double.parseDouble(price));

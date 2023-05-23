@@ -22,4 +22,12 @@ public class ItemModel {
 
     @Column(name = "url")
     private String url;
+
+    @Column(name = "add_date")
+    private long time;
+
+    @Column(name = "type")
+    private String type;
+
+    private String timeFormat;
 }

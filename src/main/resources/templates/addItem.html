@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="en" data-bs-theme="auto" xmlns:th="http://www.thymeleaf.org">
 <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
 
   <meta charset="utf-8">
@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.111.3">
-  <title>Album example · Bootstrap v5.3</title>
+  <title>Интернет магазин</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -197,11 +197,17 @@
          <input name="price" type="number" step="0.01" class="form-control" placeholder="цена товара"><br>
          <textarea name="disc" datatype="text" placeholder="описание товара" class="form-control"></textarea><br>
          <input name="url" type="text" class="form-control" placeholder="ссылка на изображение"><br>
+         <select name="type">
+           <option>Игрушки</option>
+           <option>для компьютера</option>
+           <option>для себя</option>
+         </select>
          <button type="submit" class="btn btn-warning">Отправить данные</button>
        </form>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="text-body-secondary py-5">
