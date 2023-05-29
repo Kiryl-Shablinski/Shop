@@ -192,11 +192,11 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-       <form method="post">
+       <form method="post" enctype="multipart/form-data">
          <input name="name" type="text" class="form-control" placeholder="название товара"><br>
          <input name="price" type="number" step="0.01" class="form-control" placeholder="цена товара"><br>
          <textarea name="disc" datatype="text" placeholder="описание товара" class="form-control"></textarea><br>
-         <input name="url" type="text" class="form-control" placeholder="ссылка на изображение"><br>
+         <input name="file" type="file" class="form-control" placeholder="добавить изображение"><br>
          <select name="type">
            <option>Игрушки</option>
            <option>для компьютера</option>

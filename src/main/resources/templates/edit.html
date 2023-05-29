@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
     <title>Редактирование товара</title>
 </head>
 <body>
-
+<form method="post">
+    <p>Название товара <input th:value="${item.getName()}"  name="name"></p>
+    <p>Ссылка <input th:value="${item.getUrl()}" name="url"></p>
+    <p>Цена <input th:value="${item.getPrice()}" name="price"></p>
+    <p>Описание <input th:value="${item.getDisc()}"name="disc"></p>
+    <p><button type="submit">Внести изменения</button></p>
+</form>
 </body>
 </html>

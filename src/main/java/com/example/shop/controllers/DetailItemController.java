@@ -6,6 +6,7 @@ import com.example.shop.models.RequestModel;
 import com.example.shop.repos.ItemRepo;
 import com.example.shop.repos.RequestRepo;
 import com.example.shop.services.CurrencyService;
+import com.example.shop.services.FireBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,8 @@ public class DetailItemController {
    CurrencyService currencyService;
    @Autowired
     RequestRepo requestRepo;
+   @Autowired
+    FireBaseService fireBaseService;
 
     public DetailItemController(ItemRepo itemRepo, CurrencyService currencyService) {
         this.itemRepo = itemRepo;
@@ -36,6 +39,7 @@ public class DetailItemController {
         ItemModelWithCurrency itemModelWithCurrency = new ItemModelWithCurrency(itemModel);
         itemModelWithCurrency.setEurPrice(currencyService.getEurPrice(itemModel.getPrice()));
         itemModelWithCurrency.setUsdPrice(currencyService.getUsdPrice(itemModel.getPrice()));
+        itemModelWithCurrency.setUrl(fireBaseService.getUrl(itemModelWithCurrency.getUrl()));
         model.addAttribute("item", itemModelWithCurrency);
         return "detailItem";
     }
