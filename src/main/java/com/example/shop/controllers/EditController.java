@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
@@ -36,7 +37,7 @@ public class EditController {
                                    @RequestParam String name,
                                    @RequestParam double price,
                                    @RequestParam String disc,
-                                   @RequestParam String url){
+                                   @RequestParam String url) throws Exception {
         ItemModel itemModel = itemRepo.findById(id);
         itemModel.setName(name);
         itemModel.setPrice(price);

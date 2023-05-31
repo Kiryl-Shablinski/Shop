@@ -31,8 +31,6 @@ public class AllItemsController {
         model.addAttribute("items", list);
         list.stream().forEach(itemModel -> itemModel.setUrl(fireBaseService.getUrl(itemModel.getUrl())));
         list = TimeHelper.getTime(list);
-
-
         return "allItems";
     }
 }
